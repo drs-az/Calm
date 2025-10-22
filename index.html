@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Down App</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="start-screen">
+        <button id="help-button">HELP!</button>
+    </div>
+    <div id="puzzle-screen" class="hidden">
+        <h2>Find the Words</h2>
+        <div id="word-list"></div>
+        <div id="grid"></div>
+    </div>
+    <div id="congrats-screen" class="hidden">
+        <h1>Congratulations!</h1>
+        <p>You did it! Take a deep breath and remember, everything will be okay.</p>
+        <button id="restart-button">Play Again</button>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
