@@ -231,7 +231,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     aspect-ratio: 1 / 1;
     width: min(90vw, 560px);
     gap: clamp(4px, 1vw, 6px);
@@ -245,7 +245,7 @@ body {
     background: var(--charcoal);
     border-radius: 10px;
     border: 2px solid var(--black);
-    font-size: clamp(0.9rem, 2.4vw, 1.5rem);
+    font-size: clamp(1.2rem, 3.8vw, 2.2rem);
     font-weight: 700;
     text-transform: uppercase;
     color: var(--white);
