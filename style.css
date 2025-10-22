@@ -184,20 +184,25 @@ body {
 
 .word-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
 }
 
 .word {
     background: var(--white);
-    border-radius: 10px;
-    padding: 9px 12px;
+    border-radius: 999px;
+    padding: 12px 16px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 600;
     border: 1px solid var(--divider);
     color: var(--charcoal);
+    white-space: nowrap;
     transition: transform 0.15s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
