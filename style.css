@@ -231,7 +231,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     aspect-ratio: 1 / 1;
     width: min(90vw, 560px);
     gap: clamp(4px, 1vw, 6px);

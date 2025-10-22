@@ -1,4 +1,5 @@
-const GRID_SIZE = 15;
+const GRID_SIZE = 12;
+const WORD_COUNT = 16;
 const DIRECTIONS = [
     [0, 1],   // right
     [1, 0],   // down
@@ -40,7 +41,7 @@ function startGame() {
     puzzleScreen.classList.remove('hidden');
     congratsScreen.classList.add('hidden');
 
-    selectedWords = getRandomWords(20);
+    selectedWords = getRandomWords(WORD_COUNT);
     generateGrid();
     renderWordList();
     renderGrid();
@@ -48,8 +49,10 @@ function startGame() {
 }
 
 function getRandomWords(count) {
-    const shuffled = [...wordsLibrary].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count).map(w => w.toUpperCase());
+    const filtered = wordsLibrary.filter(word => word.length <= GRID_SIZE);
+    const effectiveCount = Math.min(count, filtered.length);
+    const shuffled = [...filtered].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, effectiveCount).map(w => w.toUpperCase());
 }
 
 function generateGrid() {
