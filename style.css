@@ -41,6 +41,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
+    max-width: 90vw;
 }
 
 .word {
@@ -52,13 +53,14 @@ body {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(15, 30px);
+    grid-template-columns: repeat(15, 1fr);
+    width: min(90vw, 450px);
+    aspect-ratio: 1 / 1;
     grid-gap: 2px;
+    margin: auto;
 }
 
 .cell {
-    width: 30px;
-    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,6 +68,7 @@ body {
     border: 1px solid #ddd;
     cursor: pointer;
     user-select: none;
+    font-size: calc(min(90vw, 450px) / 15 * 0.6);
 }
 
 .selected {
